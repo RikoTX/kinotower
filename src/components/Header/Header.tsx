@@ -14,6 +14,7 @@ const inputSteyle = {
   fontSize: "14px",
   outline: "none",
   backgroundColor: "#FFFFFF",
+  color:'black'
 };
 
 export default function Header() {
@@ -42,7 +43,7 @@ export default function Header() {
                 borderRadius: "20px",
                 overflow: "hidden",
                 width: "400px",
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "black",
                 border: "1px solid #333",
               }}
             >
