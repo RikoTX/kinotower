@@ -1,15 +1,16 @@
 import "./App.css";
-import Header from "./components/Header";
+import { useRef } from "react";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import ContentPage from "./pages/ContentPage";
 
 function App() {
-  return (
-    <div>
-       {/* ################## HEADER #################### */}
-      <div style={{ paddingLeft: "430px", paddingRight: "430px" }}>
-        <Header />
-      </div>
-       {/* ################## END HEADER #################### */}
+  
+  const contentRef = useRef<HTMLDivElement>(null); 
 
+  return (
+    <div ref={contentRef}>
+      <ScrollToTop scrollRef={contentRef} />
+      <ContentPage />
     </div>
   );
 }
