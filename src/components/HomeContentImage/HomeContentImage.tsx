@@ -26,7 +26,7 @@ export default function HomeBanner() {
   const [slides, setSlides] = useState<Movie[]>([]);
 
   useEffect(() => {
-    kinopoiskApi.getRecommended(4).then(setSlides).catch(console.error);
+    kinopoiskApi.imageCenter(5).then(setSlides).catch(console.error);
   }, []);
 
   return (
