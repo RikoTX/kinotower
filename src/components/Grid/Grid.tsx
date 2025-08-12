@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Row, Col } from "antd";
+import { useNavigate } from "react-router-dom";
 import kinopoiskApi from "../../api/kinopoiskApi";
 
 interface Movie {
@@ -19,6 +20,7 @@ interface RecentlyUpdatedProps {
 export default function RecentlyUpdated({ title }: RecentlyUpdatedProps) {
   const [movies, setMovies] = useState<Movie[]>([]);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     kinopoiskApi.getRecommended(20).then(setMovies).catch(console.error);
@@ -61,8 +63,11 @@ export default function RecentlyUpdated({ title }: RecentlyUpdatedProps) {
           {movies.map((movie) => (
             <Col
               key={movie.id}
-              className="flex-shrink-0"
+              className="flex-shrink-0 cursor-pointer"
               style={{ minWidth: "150px", maxWidth: "150px" }}
+              onClick={() =>
+                navigate(`/kinotower/${encodeURIComponent(movie.name)}`)
+              }
             >
               <div className="text-center">
                 <img
