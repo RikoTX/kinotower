@@ -8,7 +8,7 @@ import Footer from "../../components/Footer/Footer";
 import Comments from "../../components/Comments/Comments";
 import { Row, Col } from "antd";
 
-const API_KEY = "H3HV3S7-BY0M33Z-KEASEEK-FH7V4E8";
+const API_KEY = "EPJEEZD-RPT42ZD-GS9F7VW-E5NV13Z";
 
 export default function MoviePage() {
   const { movieName } = useParams<{ movieName: string }>();
@@ -166,7 +166,7 @@ export default function MoviePage() {
                 ?.filter((p: any) => p.enProfession === "actor")
                 .slice(0, 12)
                 .map((p: any, index: number) => (
-                  <Col xs={12} sm={8} md={6} lg={4} key={index}>
+                  <Col xs={12} sm={8} md={6} lg={3} key={index}>
                     <div className="flex flex-col items-center">
                       <img
                         src={p.photo}
