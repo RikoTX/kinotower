@@ -7,8 +7,7 @@ import kinopoiskApi from "../../api/kinopoiskApi";
 import Footer from "../../components/Footer/Footer";
 import Comments from "../../components/Comments/Comments";
 import { Row, Col } from "antd";
-
-const API_KEY = "EPJEEZD-RPT42ZD-GS9F7VW-E5NV13Z";
+import { API_KEY } from "../../config/api";
 
 export default function MoviePage() {
   const { movieName } = useParams<{ movieName: string }>();

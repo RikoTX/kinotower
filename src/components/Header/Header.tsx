@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Col, Row } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
+import { API_KEY } from "../../config/api";
 
-const API_KEY = "EPJEEZD-RPT42ZD-GS9F7VW-E5NV13Z";
 
 const linkStyle = {
   textDecoration: "none",
