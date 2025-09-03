@@ -21,7 +21,7 @@ export default function Comments() {
         <div className="flex-1 coll ml-4">
           <p className="font-bold ">Anonymous</p>
           <input
-            placeholder="Write your comments here...."
+            placeholder="Write your comments here....."
             type="text"
             className="w-full bg-white text-black p-6 rounded-xl text-lg"
           />
