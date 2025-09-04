@@ -1,69 +1,71 @@
-# React + TypeScript + Vite
+### AIKEY ICC
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Запуск проекта
 
-Currently, two official plugins are available:
+Установка зависимостей:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+npm install
+Запуск в режиме разработки:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Копировать код
+npm start
+Проект поднимется на http://localhost:3030.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+🏗️ Команды сборки
+Сборка production:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Копировать код
+npm run build:prod
+Сборка development:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Копировать код
+npm run build:dev
+⚙️ Node.js / Volta
+Проект использует Volta для фиксации версии Node.js.
+
+Копировать код
+Node.js v20.18.0
+🌍 Переменные окружения
+Проект использует .env.* файлы:
+
+.env.local
+
+.env.development.local
+
+.env.test.local
+
+.env.production.local
+
+Минимальный набор переменных:
+
+
+Копировать код
+# базовый URL приложения (для service worker и статики)
+PUBLIC_URL=/aikey
+
+# пример API-адреса
+VITE_API_URL=https://api.example.com
+
+# пример URL для авторизации
+VITE_AUTH_URL=https://auth.example.com
+
+# пример WebSocket
+VITE_WS_URL=wss://ws.example.com
+Значения могут зависеть от window.location. Для разных окружений используйте свои .env файлы.
+
+🛠️ Patch-package
+В проекте используется patch-package для исправления сторонних зависимостей.
+Патчи применяются автоматически при установке зависимостей через postinstall:
+
+json
+Копировать код
+"postinstall": "npx patch-package && git config blame.ignoreRevsFile .git-blame-ignore-revs"
+Для создания новых патчей:
+
+
+Копировать код
+npx patch-package <package-name>
